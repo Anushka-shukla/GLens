@@ -1,0 +1,77 @@
+.actionBar-Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.experimental-labs {
+    background: none;
+    border: none;
+}
+
+.experimental-labs img {
+    width: 20px;
+    background: none;
+    border: none;
+}
+
+.experimental-labs .labs-img {
+    background: none;
+
+}
+
+.google-search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgba(40,41,42,1);
+}
+
+.google-search-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #242021;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.google-search-content img{
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+
+}
+
+.google-search-action-top{
+    font-family: 'ProductSans';
+}
+
+.google-search-action-top {
+    border: none;
+    background: none;
+    color: white;
+
+}
+
+.google-gemini {}
+
+.google-gemini img {
+    width: 20px;
+    height: 20px;
+    margin: 8px;
+}
+
+.avatar {
+    background-color: purple;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.profile-avatar {
+    color: white;
+    border: none;
+    background: none;
+}
