@@ -1,0 +1,25 @@
+.card-layout{
+    display: flex;
+    flex-direction: column;
+    /* width: 60%; */
+    margin: 10px;
+    
+
+}
+
+.card-img-container{
+    width: 100%;
+    
+}
+.card-img-container img{
+    border-radius: 20px;
+    object-fit: cover; 
+    width: 100%;
+
+}
+
+.card-text-container{
+    color: white;
+    font-size: x-large;
+    text-align: left;
+}

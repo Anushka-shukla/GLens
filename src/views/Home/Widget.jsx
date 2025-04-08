@@ -3,7 +3,6 @@ import '../../views/styles/Widget.css';
 
 const Widget = ({ widgetText, widgetDetails, widgetIcon }) => {
 
-    console.log('sJHDGSGDJGJGDJH')
     return (
         <>
             <div className="widgetList-layout">

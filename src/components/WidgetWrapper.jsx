@@ -15,7 +15,6 @@ const WidgetWrapper = () => {
         // { widgetText: imageSchool, widgetDetails: '', widgetIcon: {} }
     ];
 
-    console.log("here::s")
     return (
         <>
            <div className="widgetWrapper-layout">

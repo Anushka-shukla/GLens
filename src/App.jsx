@@ -1,5 +1,6 @@
 import './App.css';
 import Home from './views/Home/Home';
+import BottomNav from "./components/BottomNav";
 
 function App() {
   
@@ -7,7 +8,7 @@ function App() {
   return (
     <>
     <Home/>
-     
+    <BottomNav/>
     </>
   )
 }

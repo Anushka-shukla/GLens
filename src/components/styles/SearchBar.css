@@ -1,4 +1,4 @@
-.searchBar-container{
+.searchBar-container {
     background-color: rgba(40, 41, 42, 1);
     border-radius: 40px;
     height: 64px;
@@ -10,33 +10,39 @@
 
 }
 
-.search-img-container{
+.search-img-container {
     display: flex;
     /* align-items: center; */
     /* justify-content: center; */
     margin-left: 18px;
-    
 
 
-}
-
-.search-img{
 
 }
 
-.searchText-container{
+.search-img {}
+
+.searchText-container {
     color: white;
     font-size: larger;
     margin: 10px;
     text-align: left;
-    width: 100%; 
+    width: 100%;
 }
 
-.searchText{
+.searchText {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    font: inherit;
+    color: inherit;
 
 }
 
-.search-inner-container{
+.search-inner-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,11 +50,9 @@
 
 }
 
-.search-mic{
+.search-mic {}
 
-}
-
-.search-lens{
+.search-lens {
     width: 24px;
     margin-right: 18px;
 

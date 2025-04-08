@@ -1,0 +1,29 @@
+.bottom-nav-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(40, 41, 42, 1);
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 1000;
+
+
+}
+
+.nav-item-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 86px;
+    margin-right: 42px;
+    margin-left: 42px;
+    
+
+}
+
+.nav-item-list img{
+    width: 32px;
+
+}
