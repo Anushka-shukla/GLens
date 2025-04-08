@@ -1,0 +1,36 @@
+.widgetList-layout {
+    height: 100px;
+    width: 190px;
+    border: 0.5px solid #ccc6c6;
+    border-radius: 20px;
+    color: white;
+    flex-direction: column;
+    display: flex;
+}
+
+.widget-detail-container {
+    display: flow;
+    margin-left: 14px;
+    margin-top: 14px;
+}
+
+.widget-text {
+    margin-top: 12px;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: row;
+}
+
+.widget-bottom-layout .widget-details {
+    color: white;
+    font-size: x-large !important;
+}
+
+.widget-bottom-layout {
+    display: flex;
+    flex-direction: row;
+    margin-left: 16px;
+    margin-top: 26px;
+    justify-content: space-between;
+    margin-right: 16px
+}
