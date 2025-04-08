@@ -1,0 +1,12 @@
+.toolbar-items-layout{
+    width: 98px;
+    height: 70px;
+    border-radius: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toolbar-items-layout svg{
+    align-items: center;
+}

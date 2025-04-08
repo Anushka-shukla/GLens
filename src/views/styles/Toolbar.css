@@ -1,0 +1,17 @@
+.toobar-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 8px;
+    margin-right: 8px;
+    
+
+}
+
+.line {
+    height: 0.5px;
+    background-color: #ccc6c6;
+    width: 100%;
+    margin: 10px 0;
+}

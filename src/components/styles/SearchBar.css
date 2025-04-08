@@ -1,0 +1,55 @@
+.searchBar-container{
+    background-color: rgba(40, 41, 42, 1);
+    border-radius: 40px;
+    height: 64px;
+    margin-top: -24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.search-img-container{
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    margin-left: 18px;
+    
+
+
+}
+
+.search-img{
+
+}
+
+.searchText-container{
+    color: white;
+    font-size: larger;
+    margin: 10px;
+    text-align: left;
+    width: 100%; 
+}
+
+.searchText{
+
+}
+
+.search-inner-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+}
+
+.search-mic{
+
+}
+
+.search-lens{
+    width: 24px;
+    margin-right: 18px;
+
+}
