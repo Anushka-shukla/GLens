@@ -1,11 +1,20 @@
+import { useState } from 'react';
 import experiment from '../assets/images/experiment.svg';
 import geminiAi from '../assets/images/google-gemini-icon.png';
 import googleLogo from '../assets/images/googleLogo.png';
 import '../components/styles/ActionBar.css';
+import SignInModal from '../views/Home/SignInModal';
 
 const ActionBar = () => {
+    const [openProfileModal, setOpenProfileModa] = useState(false);
+
+    const handleProfileModal = () => {
+        setOpenProfileModa(true);
+    }
 
     return (<>
+        {/* Show Modal conditionally */}
+        {openProfileModal && <SignInModal />}
         <div className='actionBar-Container'>
             <button className='experimental-labs'>
                 <img src={experiment} alt="experimental-labs" className='labs-img' />
@@ -23,10 +32,14 @@ const ActionBar = () => {
             </div>
 
             <div className='avatar'>
-                <button className='profile-avatar'>A</button>
+                <button className='profile-avatar' onClick={handleProfileModal}>A</button>
             </div>
 
+
+
+
         </div>
+
 
     </>)
 

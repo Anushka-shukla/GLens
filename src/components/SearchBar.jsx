@@ -1,9 +1,9 @@
 import searchIcon from '../assets/images/searchIcon.svg';
 import micIcon from './../assets/images/mic.svg';
 import googleLens from '../assets/images/Google_Lens_Icon.svg';
+import left from '../assets/images/chevron_left.svg';
 import './styles/SearchBar.css';
-import { searchApi } from '../../src/api/searchAPI';
-import { useEffect, useState } from 'react';
+
 
 const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, showSearchSuggestion, setShowSearchSuggestion }) => {
 
@@ -13,31 +13,17 @@ const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, s
         console.log("searchText::", searchText)
     }
 
-    useEffect(() => {
-        if (searchText) {
-            console.log("::::::", searchText)
-            let searchOutput = searchApi(searchText);
-            console.log("searchResult:::::", searchOutput);
-            setSearchResult(searchOutput);
-        }
-    }, [searchText]);
-
     const showSearchSuggestionScreen = () => {
         setShowSearchSuggestion(true);
 
-
     }
-   
-
-
-
-
     return (<>
-        <div className="searchBar-container">
+        <div className="searchBar-container" >
             <div className='search-img-container' onClick={showSearchSuggestionScreen}>
-                <img src={searchIcon} alt="search-img" className="search-img" onClick={showSearchSuggestionScreen} />
+
+                {searchText ? (<img src={left} alt="search-img" />) : (<img src={searchIcon} alt="search-img" />)}
             </div>
-            <div className="searchText-container">
+            <div className="searchText-container" onClick={showSearchSuggestionScreen}>
                 <input className='searchText' placeholder='Search' onChange={handleSearchTextInput} />
             </div>
 

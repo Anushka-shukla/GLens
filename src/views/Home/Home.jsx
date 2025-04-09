@@ -11,10 +11,13 @@ import ToolBar from "./Toolbar";
 const Home = () => {
 
     const [searchText, setSearchText] = useState('');
-    const [searchResult, setSearchResult] = useState('');
+    const [searchResult, setSearchResult] = useState([]);
     const [showSearchSuggestion, setShowSearchSuggestion] = useState(false);
+    
     if (showSearchSuggestion) {
-        return <SearchSuggestions />
+        return <SearchSuggestions searchText={searchText} setSearchText={setSearchText}
+        searchResult={searchResult} setSearchResult={setSearchResult}
+        showSearchSuggestion={showSearchSuggestion} setShowSearchSuggestion={setShowSearchSuggestion} />
     }
 
     return (<>
@@ -22,7 +25,7 @@ const Home = () => {
         <GoogleLogo />
         <SearchBar searchText={searchText} setSearchText={setSearchText}
             searchResult={searchResult} setSearchResult={setSearchResult}
-            showSearchSuggestion={showSearchSuggestion} setShowSearchSuggestion={setShowSearchSuggestion} />
+            showSearchSuggestion={showSearchSuggestion} setShowSearchSuggestion={setShowSearchSuggestion}/>
         <ToolBar />
         <WidgetWrapper />
         <Card />
