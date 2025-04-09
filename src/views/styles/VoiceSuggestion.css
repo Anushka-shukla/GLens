@@ -1,0 +1,74 @@
+.voiceSuggestion-layout {
+    background: rgba(40, 41, 42, 1);
+    width: 100%;
+    height: 100vh;
+
+}
+
+.voiceSuggestion-top-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+
+}
+
+.left-bg,
+.lang-bg {
+    background-color: rgb(53, 54, 54);
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.song-btn-container {
+   
+    display: flex;
+        flex-direction: row;
+        justify-content: center;
+       
+        position: absolute;
+        left: 186px;
+        bottom: 100px;
+       
+}
+
+.voice-speak-now {
+    color: rgb(175, 172, 172);
+    text-align: center;
+    padding-top: 20px;
+    text-align: center;
+    padding-top: 20px;
+
+}
+
+.song-text {
+    color: rgb(175, 172, 172);
+    font-size: small;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.song-btn {
+    background: none;
+    border: none;
+    background-color: rgb(33, 32, 32);
+    border-radius: 20px;
+    border: 0.5px solid white;
+    display: flex;
+
+}
+
+.music-img {
+    width: 20px;
+    height: 20px;
+}
