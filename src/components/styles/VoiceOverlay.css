@@ -1,0 +1,36 @@
+
+.voice-overlay {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    top: 30% ;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 20px;
+  }
+  
+  .google-dots {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation: bounce 1s infinite;
+  }
+  
+  .red { background: #EA4335; animation-delay: 0s; }
+  .blue { background: #4285F4; animation-delay: 0.1s; }
+  .yellow { background: #FBBC05; animation-delay: 0.2s; }
+  .green { background: #34A853; animation-delay: 0.3s; }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  

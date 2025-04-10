@@ -3,6 +3,7 @@ import micIcon from './../assets/images/mic.svg';
 import googleLens from '../assets/images/Google_Lens_Icon.svg';
 import left from '../assets/images/chevron_left.svg';
 import './styles/SearchBar.css';
+
 import { useState } from 'react';
 
 
@@ -10,6 +11,7 @@ import { useState } from 'react';
 const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, showSearchSuggestion, setShowSearchSuggestion, setShowVoiceSuggestionScreen }) => {
 
     
+
     const handleSearchTextInput = (e) => {
         setSearchText(e.target.value);
         console.log("searchText::", searchText)
@@ -19,11 +21,11 @@ const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, s
         setShowSearchSuggestion(true);
     }
 
-    const handleShowVoiceSuggestionScreen=()=>{
-        setShowVoiceSuggestionScreen(true)
+    const handleShowVoiceSuggestionScreen = () => {
+        setShowVoiceSuggestionScreen(true);
 
     }
-    
+
     return (<>
         <div className="searchBar-container" >
             <div className='search-img-container' onClick={showSearchSuggestionScreen}>
@@ -35,7 +37,7 @@ const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, s
             </div>
 
             <div className="search-inner-container">
-                <button className='mic-btn' onClick={handleShowVoiceSuggestionScreen}>
+                <button className='mic-btn' onClick={handleShowVoiceSuggestionScreen} value={searchText}>
                     <img src={micIcon} alt="mic" className="search-mic" />
                 </button>
                 <div>
@@ -43,8 +45,6 @@ const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, s
                 </div>
 
             </div>
-
-
         </div>
     </>)
 

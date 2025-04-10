@@ -1,12 +1,33 @@
+import { useEffect } from 'react';
 import chevronLeft from '../../assets/images/chevron_left.svg';
 import language from '../../assets/images/language.svg';
 import music from '../../assets/images/music_note.svg';
+import { useWebVoiceRecognition } from '../../utility/useWebVoiceRecognition';
+import { useState } from 'react';
 
 import '../styles/VoiceSuggestion.css';
+import VoiceOverlay from '../../components/VoiceOverlay';
 
 
 const VoiceSuggestion = () => {
 
+    const { startListening } = useWebVoiceRecognition();
+    const [isListening, setIsListening] = useState(false);
+
+    const handleVoiceSearch = () => {
+        startListening(
+            (transcript) => {
+                setSearchText(transcript);
+                setIsListening(false);
+            },
+            () => setIsListening(true),    // onStart
+            () => setIsListening(false)    // onEnd
+        );
+    }
+    useEffect(() => {
+        handleVoiceSearch();
+
+    }, [])
 
     return (
         <div className="voiceSuggestion-layout">
@@ -23,9 +44,12 @@ const VoiceSuggestion = () => {
 
             </div>
 
+
             <div className='voice-speak-now'>
-                Speak now
+                {isListening ? 'Listening...' : 'Speak now'}
             </div>
+
+            {isListening && <VoiceOverlay />}
 
             <div className='song-btn-container'>
                 <button className='song-btn'>
