@@ -4,9 +4,42 @@ import history from '../../assets/images/history.svg';
 import more from '../../assets/images/more.svg';
 import searchMore from '../../assets/images/searchIconLens.svg';
 import pic from '../../assets/images/WhatTheFont.png';
+import { useContext, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "../Lens/styles/Lens.css";
+import ImageSearchContext from '../../context/ImageSearchContext';
 
 const Lens = () => {
+    const [capturedImage, setCapturedImage] = useContext(ImageSearchContext);
+    const [showCropModal, setShowCropModal] = useState(false);
+    const fileInputRef = useRef(null);
+
+    const navigate = useNavigate();
+
+    const handleSearchImage = () => {
+        if (capturedImage) {
+            navigate('/search/image');
+        }
+    };
+
+    const handleFileUpload = async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setCapturedImage(reader.result);
+            setShowCropModal(true);
+        };
+        reader.readAsDataURL(file);
+        console.log(file)
+
+    };
+
+    const handleLensBtn = () => {
+        // Open file input (gallery)
+        fileInputRef.current?.click();
+    };
     return (
         <div className='lens-screen-layout'>
             <div className="lens-top-row">
@@ -32,22 +65,30 @@ const Lens = () => {
                     </button>
                 </div>
 
-                <div class="lens-overlay">
-                    <div class="corner top-left"></div>
-                    <div class="corner top-right"></div>
-                    <div class="corner bottom-left"></div>
-                    <div class="corner bottom-right"></div>
+                <div className="lens-overlay">
+
+                    <div className="corner top-left"></div>
+                    <div className="corner top-right"></div>
+                    <div className="corner bottom-left"></div>
+                    <div className="corner bottom-right"></div>
+
+
                 </div>
+                {capturedImage && (
+                    <div className="preview-image-wrapper">
+                        <img src={capturedImage} alt="Uploaded Preview" className="preview-image" />
+                    </div>
+                )}
             </div>
 
             <div>
-                <div className='left-gallery-btn gallery-corner'>
+                <div className='left-gallery-btn gallery-corner' onClick={handleLensBtn}>
                     <div className='gallery-btn'>
                         <img src={pic} alt='pic' />
                     </div>
 
                 </div>
-                <div className='bottom-search-icon'>
+                <div className='bottom-search-icon' onClick={handleSearchImage}>
                     <div className="search-img-btn-container">
                         <div className='search-big-circle'>
                             <div className='search-big-small'>
@@ -61,7 +102,14 @@ const Lens = () => {
                 </div>
 
             </div>
-
+            {/* Hidden file input for gallery upload */}
+            <input
+                type="file"
+                accept="image/*"
+                style={{ display: 'none' }}
+                ref={fileInputRef}
+                onChange={handleFileUpload}
+            />
 
         </div>
     )

@@ -9,17 +9,14 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, showSearchSuggestion, setShowSearchSuggestion, setShowVoiceSuggestionScreen, setCapturedImage,
-    setShowCropModal }) => {
+const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, showSearchSuggestion, setShowSearchSuggestion, setShowVoiceSuggestionScreen}) => {
 
-    const fileInputRef = useRef(null);
+    // const fileInputRef = useRef(null);
 
     const navigate = useNavigate();
 
     const handleCamera = () => {
         navigate('./lens')
-
-
     }
 
     const handleSearchTextInput = (e) => {
@@ -46,24 +43,24 @@ const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, s
 
     }
 
-    const handleFileUpload = async (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
+    // const handleFileUpload = async (e) => {
+    //     const file = e.target.files[0];
+    //     if (!file) return;
 
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            setCapturedImage(reader.result);
-            setShowCropModal(true);
-        };
-        reader.readAsDataURL(file);
-        console.log(file)
+    //     const reader = new FileReader();
+    //     reader.onloadend = () => {
+    //         setCapturedImage(reader.result);
+    //         setShowCropModal(true);
+    //     };
+    //     reader.readAsDataURL(file);
+    //     console.log(file)
 
-    };
-
-    // const handleLensBtn = () => {
-    //     // Open file input (gallery)
-    //     fileInputRef.current?.click();
     // };
+
+    // // const handleLensBtn = () => {
+    // //     // Open file input (gallery)
+    // //     fileInputRef.current?.click();
+    // // };
 
 
 
@@ -92,13 +89,13 @@ const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, s
             </div>
         </div>
         {/* Hidden file input for gallery upload */}
-        <input
+        {/* <input
             type="file"
             accept="image/*"
             style={{ display: 'none' }}
             ref={fileInputRef}
             onChange={handleFileUpload}
-        />
+        /> */}
     </>)
 
 }

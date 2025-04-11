@@ -15,8 +15,7 @@ const Home = () => {
     const [searchResult, setSearchResult] = useState([]);
     const [showSearchSuggestion, setShowSearchSuggestion] = useState(false);
     const [showVoiceSuggestionScreen, setShowVoiceSuggestionScreen] = useState(false);
-    const [capturedImage, setCapturedImage] = useState(null);
-    const [showCropModal, setShowCropModal] = useState(false);
+  
 
     console.log(showSearchSuggestion, showVoiceSuggestionScreen)
     if (showSearchSuggestion) {
@@ -44,8 +43,7 @@ const Home = () => {
         <GoogleLogo />
         <SearchBar searchText={searchText} setSearchText={setSearchText}
             searchResult={searchResult} setSearchResult={setSearchResult}
-            showSearchSuggestion={showSearchSuggestion} setShowSearchSuggestion={setShowSearchSuggestion} setShowVoiceSuggestionScreen={setShowVoiceSuggestionScreen} setCapturedImage={setCapturedImage}
-            setShowCropModal={setShowCropModal}/>
+            showSearchSuggestion={showSearchSuggestion} setShowSearchSuggestion={setShowSearchSuggestion} setShowVoiceSuggestionScreen={setShowVoiceSuggestionScreen} />
         <ToolBar />
         <WidgetWrapper />
         <Card />
