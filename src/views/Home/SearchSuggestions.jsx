@@ -34,7 +34,7 @@ const SearchTextItems = ({ suggestionList, searchText }) => {
   )
 }
 
-const SearchSuggestions = ({ searchText, setSearchText, searchResult, setSearchResult, showSearchSuggestion, setShowSearchSuggestion }) => {
+const SearchSuggestions = ({ searchText, setSearchText, searchResult, setSearchResult, showSearchSuggestion, setShowSearchSuggestion, setShowVoiceSuggestionScreen }) => {
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,14 +57,15 @@ const SearchSuggestions = ({ searchText, setSearchText, searchResult, setSearchR
     fetchData();
   }, [searchText]);
 
+ 
 
 
   return (
 
-    <div className='search-suggestion-layout' onChange={() => { }}>
+    <div className='search-suggestion-layout'>
       <SearchBar searchText={searchText} setSearchText={setSearchText}
         searchResult={searchResult} setSearchResult={setSearchResult}
-        showSearchSuggestion={showSearchSuggestion} setShowSearchSuggestion={setShowSearchSuggestion} />
+        showSearchSuggestion={showSearchSuggestion} setShowSearchSuggestion={setShowSearchSuggestion} setShowVoiceSuggestionScreen={setShowVoiceSuggestionScreen}/>
 
       <div className="search-options-container">
         <button className="recent-search">Recent Searches</button>

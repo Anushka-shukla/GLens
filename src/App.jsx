@@ -1,17 +1,32 @@
 import './App.css';
 import Home from './views/Home/Home';
 import BottomNav from "./components/BottomNav";
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Lens from './views/Lens/Lens';
 
-function App() {
-  
+// Create an inner component inside App to use useLocation
+function AppWithRouter() {
+  const location = useLocation();
+  const hideBottomNav = location.pathname === '/lens';
 
   return (
     <>
-    <Home/>
-    
-    <BottomNav/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/lens" element={<Lens />} />
+      </Routes>
+
+      {!hideBottomNav && <BottomNav />}
     </>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <Router>
+      <AppWithRouter />
+    </Router>
+  );
+}
+
+export default App;

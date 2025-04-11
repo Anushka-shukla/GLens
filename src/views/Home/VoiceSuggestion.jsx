@@ -9,25 +9,39 @@ import '../styles/VoiceSuggestion.css';
 import VoiceOverlay from '../../components/VoiceOverlay';
 
 
-const VoiceSuggestion = () => {
+const VoiceSuggestion = ({ setSearch, handleShowVoiceSearch }) => {
 
     const { startListening } = useWebVoiceRecognition();
     const [isListening, setIsListening] = useState(false);
+    const [transcript, setTranscript] = useState('');
 
     const handleVoiceSearch = () => {
         startListening(
-            (transcript) => {
-                setSearchText(transcript);
+            (spokenText) => {
+                setTranscript(spokenText);
                 setIsListening(false);
             },
-            () => setIsListening(true),    // onStart
-            () => setIsListening(false)    // onEnd
+            () => setIsListening(true),
+            () => setIsListening(false)
         );
-    }
+    };
+
     useEffect(() => {
         handleVoiceSearch();
 
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        if (transcript) {
+            setTimeout(() => {
+                setSearch(transcript);
+                handleShowVoiceSearch();
+            }, 1000);
+
+
+        }
+
+    }, [transcript])
 
     return (
         <div className="voiceSuggestion-layout">
@@ -45,9 +59,15 @@ const VoiceSuggestion = () => {
             </div>
 
 
-            <div className='voice-speak-now'>
+            {!transcript && <div className='voice-speak-now'>
                 {isListening ? 'Listening...' : 'Speak now'}
-            </div>
+            </div>}
+
+            {transcript && (
+                <div className="voice-transcript">
+                    <h3>{transcript}</h3>
+                </div>
+            )}
 
             {isListening && <VoiceOverlay />}
 

@@ -14,18 +14,27 @@ const Home = () => {
     const [searchText, setSearchText] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const [showSearchSuggestion, setShowSearchSuggestion] = useState(false);
-    const [showVoiceSuggestionScreen, setShowVoiceSuggestionScreen]= useState(false)
+    const [showVoiceSuggestionScreen, setShowVoiceSuggestionScreen] = useState(false);
+    const [capturedImage, setCapturedImage] = useState(null);
+    const [showCropModal, setShowCropModal] = useState(false);
 
-    
+    console.log(showSearchSuggestion, showVoiceSuggestionScreen)
     if (showSearchSuggestion) {
         return <SearchSuggestions searchText={searchText} setSearchText={setSearchText}
-        searchResult={searchResult} setSearchResult={setSearchResult}
-        showSearchSuggestion={showSearchSuggestion} setShowSearchSuggestion={setShowSearchSuggestion} />
+            searchResult={searchResult} setSearchResult={setSearchResult}
+            showSearchSuggestion={showSearchSuggestion} setShowSearchSuggestion={setShowSearchSuggestion} setShowVoiceSuggestionScreen={setShowVoiceSuggestionScreen} />
     }
 
-    if(showVoiceSuggestionScreen){
-        return(
-            <VoiceSuggestion/>
+    const handleShowVoiceSearch = () => {
+        setShowSearchSuggestion(true);
+        setShowVoiceSuggestionScreen(false);
+    }
+
+
+    if (showVoiceSuggestionScreen) {
+
+        return (
+            <VoiceSuggestion setSearch={setSearchText} handleShowVoiceSearch={handleShowVoiceSearch} />
         )
     }
 
@@ -35,7 +44,8 @@ const Home = () => {
         <GoogleLogo />
         <SearchBar searchText={searchText} setSearchText={setSearchText}
             searchResult={searchResult} setSearchResult={setSearchResult}
-            showSearchSuggestion={showSearchSuggestion} setShowSearchSuggestion={setShowSearchSuggestion} setShowVoiceSuggestionScreen={setShowVoiceSuggestionScreen}/>
+            showSearchSuggestion={showSearchSuggestion} setShowSearchSuggestion={setShowSearchSuggestion} setShowVoiceSuggestionScreen={setShowVoiceSuggestionScreen} setCapturedImage={setCapturedImage}
+            setShowCropModal={setShowCropModal}/>
         <ToolBar />
         <WidgetWrapper />
         <Card />
