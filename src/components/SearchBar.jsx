@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, showSearchSuggestion, setShowSearchSuggestion, setShowVoiceSuggestionScreen }) => {
+const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, showSearchSuggestion, setShowSearchSuggestion, setShowVoiceSuggestionScreen, capturedImage }) => {
 
     // const fileInputRef = useRef(null);
 
@@ -44,23 +44,26 @@ const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, s
 
     }
 
+    const getSearchBarIcons = () => {
+        if (capturedImage) {
+            return (<img src={searchGoogleLogo} alt="google-icon" className='google-icon-image-search' />);
+        }
+        if (searchText) {
+            return (
+                <img src={left} alt="search-img" onClick={handleBackBtn} />)
 
+        }
+        return (<img src={searchIcon} alt="search-img" />)
+    }
 
-    return (<>
-        <div className="searchBar-container" >
-            <div className='search-img-container' onClick={showSearchSuggestionScreen}>
-
-                {searchText ? (
-                    <img src={left} alt="search-img" onClick={handleBackBtn} />) :
-                    (<img src={searchIcon} alt="search-img" />)}
-
-                {/* {showImageSearchSuggestions ? (<img src={searchGoogleLogo} alt="google-icon" />) : (<img src={searchIcon} alt="search-img" />)} */}
-            </div>
-            <div className="searchText-container" onClick={showSearchSuggestionScreen}>
-                <input className='searchText' placeholder='Search' onChange={handleSearchTextInput} value={searchText} />
-            </div>
-
-            <div className="search-inner-container">
+    const getAvatar = () => {
+        if (capturedImage) {
+            return (<div className='avatar-search-bar'>
+                <span>A</span>
+                </div>)
+        }
+        return (
+            <>
                 <button className='mic-btn' onClick={handleShowVoiceSuggestionScreen} value={searchText}>
                     <img src={micIcon} alt="mic" className="search-mic" />
                 </button>
@@ -69,6 +72,31 @@ const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, s
                         <img src={googleLens} alt="lens" className="search-lens" />
                     </button>
                 </div>
+            </>)
+    }
+
+
+
+
+    return (<>
+        <div className="searchBar-container" >
+            <div className='search-img-container' onClick={showSearchSuggestionScreen}>
+
+                {getSearchBarIcons()}
+            </div>
+            <div className="searchText-container" onClick={showSearchSuggestionScreen}>
+
+                <div className='search-bar-image'>
+                    {capturedImage ? (<img src={capturedImage} alt="img-captured" className='captured-img-search-bar' />) : ""}
+                </div>
+
+                <input className='searchText' placeholder={capturedImage ? "Add to search" : "Search"} onChange={handleSearchTextInput} value={searchText} />
+
+            </div>
+
+            <div className="search-inner-container">
+                {getAvatar()}
+
 
             </div>
         </div>
