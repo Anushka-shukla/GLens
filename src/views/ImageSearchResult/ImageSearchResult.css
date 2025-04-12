@@ -1,0 +1,178 @@
+.image-search-results-layout {
+    margin-top: 32px;
+}
+
+.image-search-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+    color: rgb(139, 138, 138);
+    border-bottom: 1px solid #7d7878;
+    margin: 20px 0;
+
+}
+
+.image-search-options-all {
+    color: white;
+
+}
+
+.image-search-results-info {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    padding: 0 16px 16px 16px;
+    border-bottom: 1px solid #7d7878;
+
+}
+
+.image-search-results-text {
+    color: rgb(198, 197, 197);
+    font-size: large;
+    font-weight: 100;
+
+}
+
+.cards-layout {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+/* card 1 */
+.search-card-first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 16px;
+    width: 48%;
+
+}
+
+.search-card-first .main-img {}
+
+.search-card-first img {
+    width: 80%;
+    border-radius: 20px;
+    object-fit: contain;
+
+
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.website-icon {
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+}
+
+.website-icon img {
+    background-color: white;
+    padding: 4px;
+    object-fit: contain;
+
+
+}
+
+.website-icon-text {
+    color: #7d7878;
+    width: 20px;
+}
+
+.webiste-text {
+    color: white;
+    margin-left: 26px;
+
+}
+
+
+
+
+/* card 2 */
+
+.search-card-second {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 16px;
+    width: 50%;
+    margin-bottom: 36px;
+}
+
+.search-card-second img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: contain;
+}
+
+.card-details {}
+
+.website-icon {}
+
+.website-icon img {}
+
+.website-icon-text {}
+
+.search-card-second .webiste-text {
+    color: white;
+    margin-left: 26px;
+
+}
+
+
+
+/* card 3 */
+
+.search-card-first {}
+
+.search-card-first img {}
+
+.card-details {}
+
+.website-icon {}
+
+.website-icon img {}
+
+.website-icon-text {}
+
+.webiste-text {}
+
+/* modal */
+
+.image-search-modal {
+    width: 70%;
+    background-color: rgba(40, 41, 42, 1);
+    padding: 16px;
+    border-radius: 30px;
+    height: 15px;
+    position: fixed;
+    left: 46px;
+}
+
+.modal-content {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -5px;
+}
+
+.modal-text {}
+
+.modal-text-option1,
+.modal-text-option2 {
+    color: rgb(99, 99, 225);
+    opacity: 0.7;
+}
