@@ -4,7 +4,7 @@ import BottomNav from "./components/BottomNav";
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Lens from './views/Lens/Lens';
 import ImageSearchResult from './views/ImageSearchResult/ImageSearchResult';
-import ImageSearchContext from './components/ImageSearchContext';
+import ImageSearchContext from './context/ImageSearchContext';
 import { useState } from 'react';
 
 // Create an inner component inside App to use useLocation

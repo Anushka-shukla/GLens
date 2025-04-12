@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import ImageSearchContext from '../../components/ImageSearchContext';
+import ImageSearchContext from '../../context/ImageSearchContext';
 import SearchBar from '../../components/SearchBar';
 import '../ImageSearchResult/ImageSearchResult.css';
 import info from '../../assets/images/info.svg';

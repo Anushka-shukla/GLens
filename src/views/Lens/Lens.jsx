@@ -7,7 +7,7 @@ import pic from '../../assets/images/WhatTheFont.png';
 import { useContext, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../Lens/styles/Lens.css";
-import ImageSearchContext from '../../components/ImageSearchContext';
+import ImageSearchContext from '../../context/ImageSearchContext';
 
 const Lens = () => {
     const [capturedImage, setCapturedImage] = useContext(ImageSearchContext);
