@@ -34,7 +34,7 @@ const ImageSearchResult = () => {
 
 
         <div className='image-search-results-layout'>
-            <SearchBar />
+             <SearchBar />
             <div className='image-search-options'>
 
                 <div className='image-search-options-all'>All</div>

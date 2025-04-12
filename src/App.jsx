@@ -12,6 +12,7 @@ function AppWithRouter() {
   const location = useLocation();
   const hideBottomNav = location.pathname === '/lens';
   
+  
 
   return (
     <>

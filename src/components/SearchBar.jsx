@@ -2,6 +2,7 @@ import searchIcon from '../assets/images/searchIcon.svg';
 import micIcon from './../assets/images/mic.svg';
 import googleLens from '../assets/images/Google_Lens_Icon.svg';
 import left from '../assets/images/chevron_left.svg';
+import searchGoogleLogo from '../assets/images/search-googleLogo.png'
 import './styles/SearchBar.css';
 
 import { useRef } from 'react';
@@ -9,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, showSearchSuggestion, setShowSearchSuggestion, setShowVoiceSuggestionScreen}) => {
+const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, showSearchSuggestion, setShowSearchSuggestion, setShowVoiceSuggestionScreen }) => {
 
     // const fileInputRef = useRef(null);
 
@@ -43,25 +44,6 @@ const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, s
 
     }
 
-    // const handleFileUpload = async (e) => {
-    //     const file = e.target.files[0];
-    //     if (!file) return;
-
-    //     const reader = new FileReader();
-    //     reader.onloadend = () => {
-    //         setCapturedImage(reader.result);
-    //         setShowCropModal(true);
-    //     };
-    //     reader.readAsDataURL(file);
-    //     console.log(file)
-
-    // };
-
-    // // const handleLensBtn = () => {
-    // //     // Open file input (gallery)
-    // //     fileInputRef.current?.click();
-    // // };
-
 
 
     return (<>
@@ -71,6 +53,8 @@ const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, s
                 {searchText ? (
                     <img src={left} alt="search-img" onClick={handleBackBtn} />) :
                     (<img src={searchIcon} alt="search-img" />)}
+
+                {/* {showImageSearchSuggestions ? (<img src={searchGoogleLogo} alt="google-icon" />) : (<img src={searchIcon} alt="search-img" />)} */}
             </div>
             <div className="searchText-container" onClick={showSearchSuggestionScreen}>
                 <input className='searchText' placeholder='Search' onChange={handleSearchTextInput} value={searchText} />
@@ -88,14 +72,7 @@ const SearchBar = ({ searchText, setSearchText, searchResult, setSearchResult, s
 
             </div>
         </div>
-        {/* Hidden file input for gallery upload */}
-        {/* <input
-            type="file"
-            accept="image/*"
-            style={{ display: 'none' }}
-            ref={fileInputRef}
-            onChange={handleFileUpload}
-        /> */}
+
     </>)
 
 }
