@@ -110,7 +110,7 @@
     position: fixed;
     left: 46px;
     z-index: 2000;
-    bottom: 86px;
+    bottom: 92px;
 }
 
 .modal-content {
@@ -119,7 +119,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: -5px;
+    margin: -5px
 }
 
 .modal-text {}
